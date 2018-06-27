@@ -4,7 +4,7 @@
     <ul>
       <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
-          <img class="item-img" :src="item.imgURL">
+          <img class="item-img" :src="item.imgUrl">
         </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,41 +17,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      list: [
-        {
-          id: '001',
-          imgURL: 'http://img1.qunarzz.com/sight/source/1606/59/996c626596a5f6.jpg_r_640x214_54c8b946.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '002',
-          imgURL: 'http://img1.qunarzz.com/sight/source/1606/59/996c626596a5f6.jpg_r_640x214_54c8b946.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '003',
-          imgURL: 'http://img1.qunarzz.com/sight/source/1606/59/996c626596a5f6.jpg_r_640x214_54c8b946.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '004',
-          imgURL: 'http://img1.qunarzz.com/sight/source/1606/59/996c626596a5f6.jpg_r_640x214_54c8b946.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '005',
-          imgURL: 'http://img1.qunarzz.com/sight/source/1606/59/996c626596a5f6.jpg_r_640x214_54c8b946.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

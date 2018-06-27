@@ -3,7 +3,7 @@
     <div class="title">热销推荐</div>
     <ul>
       <li class="item border-bottom" v-for="item of list" :key="item.id">
-        <img class="item-img" :src="item.imgURL">
+        <img class="item-img" :src="item.imgUrl">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
@@ -16,41 +16,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      list: [
-        {
-          id: '001',
-          imgURL: 'http://img1.qunarzz.com/sight/p0/1611/60/601067b5faa1a1bba3.water.jpg_200x200_b72f6d5f.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '002',
-          imgURL: 'http://img1.qunarzz.com/sight/p0/1611/60/601067b5faa1a1bba3.water.jpg_200x200_b72f6d5f.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '003',
-          imgURL: 'http://img1.qunarzz.com/sight/p0/1611/60/601067b5faa1a1bba3.water.jpg_200x200_b72f6d5f.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '004',
-          imgURL: 'http://img1.qunarzz.com/sight/p0/1611/60/601067b5faa1a1bba3.water.jpg_200x200_b72f6d5f.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        },
-        {
-          id: '005',
-          imgURL: 'http://img1.qunarzz.com/sight/p0/1611/60/601067b5faa1a1bba3.water.jpg_200x200_b72f6d5f.jpg',
-          title: '桐柏山淮源',
-          desc: '来呀，一起看风景呀'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
