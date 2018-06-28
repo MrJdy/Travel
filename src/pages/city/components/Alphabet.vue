@@ -46,6 +46,7 @@ export default {
       this.touchStatus = true
     },
     handleTouchMove (e) {
+      e.preventDefault()
       if (this.touchStatus) {
         if (this.timer) {
           clearTimeout(this.timer)
