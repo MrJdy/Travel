@@ -13,6 +13,7 @@ import 'styles/reset.css'
 import 'styles/border.css'
 // 引入图标库
 import 'styles/iconfont.css'
+import store from './store'
 
 Vue.config.productionTip = false
 // 解决移动端点击事件300ms延迟的问题
@@ -23,6 +24,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
