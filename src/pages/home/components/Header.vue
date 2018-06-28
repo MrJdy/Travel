@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <div class="iconfont back-icon">&#xe624;</div>
+      <div class="iconfont qr-icon">&#xe64b;</div>
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
@@ -35,8 +35,9 @@ export default {
     .header-left
       width .64rem
       float left
-      .back-icon
-        font-size .4rem
+      padding-left .05rem
+      .qr-icon
+        font-size .5rem
         text-align center
     .header-input
       flex 1
