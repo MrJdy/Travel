@@ -3,7 +3,11 @@
     <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
       <div class="iconfont header-back">&#xe624;</div>
     </router-link>
-    <div class="header-fixed" v-show="!showAbs">
+    <div
+      class="header-fixed"
+      v-show="!showAbs"
+      :style="opacityStyle"
+    >
       <router-link to="/">
         <div class="iconfont header-fixed-back">&#xe624;</div>
       </router-link>
@@ -12,18 +16,27 @@
   </div>
 </template>
 <script>
-import CommonGallery from 'common/gallery/Gallery'
 export default {
   name: 'DetailHeader',
   data () {
     return {
-      showAbs: true
+      showAbs: true,
+      opacityStyle: {
+        opacity: 0
+      }
     }
   },
   methods: {
     handleScroll () {
-      console.log(document.documentElement.scrollTop);
-      
+      const top = document.documentElement.scrollTop
+      if (top > 40) {
+        let opacity = top / 120
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = { opacity }
+        this.showAbs = false
+      } else {
+        this.showAbs = true
+      }
     }
   },
   activated () {
