@@ -56,6 +56,7 @@ export default {
     this.lastCity = this.city
     this.getHomeInfo()
   },
+  // 这个生命周期函数是keepalive新增的，
   activated () {
     if (this.lastCity !== this.city) {
       this.lastCity = this.city
