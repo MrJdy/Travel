@@ -32,6 +32,7 @@ export default {
   methods: {
     handleScroll () {
       const top = document.documentElement.scrollTop
+      console.log(top)
       if (top > 5) {
         this.showBack = false
       } else {
@@ -48,11 +49,11 @@ export default {
     }
   },
   activated () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('touchmove', this.handleScroll)
   },
   // 解绑全局事件
   deactivated () {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('touchmove', this.handleScroll)
   }
 }
 </script>

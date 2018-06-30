@@ -32,13 +32,6 @@ export default {
     }
   },
   methods: {
-    getDetailInfo () {
-      axios.get('/api/detail.json', {
-        params: {
-          id: this.$route.params.id
-        }
-      }).then(this.handleGetDataSucc)
-    },
     handleGetDataSucc (res) {
       res = res.data
       if (res.ret && res.data) {
@@ -49,9 +42,6 @@ export default {
         this.list = data.categoryList
       }
     }
-  },
-  mounted () {
-    this.getDetailInfo()
   },
   activated () {
     axios.get('/api/detail.json', {
