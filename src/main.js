@@ -6,6 +6,7 @@ import router from './router'
 import fastClick from 'fastclick'
 // 引入Vue轮播图库
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'babel-polyfill'
 import 'swiper/dist/css/swiper.css'
 // 重置浏览器默认样式
 import 'styles/reset.css'

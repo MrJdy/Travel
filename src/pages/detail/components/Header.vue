@@ -32,7 +32,6 @@ export default {
   methods: {
     handleScroll () {
       const top = document.documentElement.scrollTop
-      console.log(top)
       if (top > 5) {
         this.showBack = false
       } else {
