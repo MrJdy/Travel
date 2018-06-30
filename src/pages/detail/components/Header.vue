@@ -1,8 +1,10 @@
 <template>
   <div>
-    <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
-      <div class="iconfont header-back">&#xe624;</div>
-    </router-link>
+    <div v-show="showBack">
+      <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
+        <div class="iconfont header-back">&#xe624;</div>
+      </router-link>
+    </div>
     <div
       class="header-fixed"
       v-show="!showAbs"
@@ -21,6 +23,7 @@ export default {
   data () {
     return {
       showAbs: true,
+      showBack: true,
       opacityStyle: {
         opacity: 0
       }
@@ -28,8 +31,12 @@ export default {
   },
   methods: {
     handleScroll () {
-      console.log(scroll)
       const top = document.documentElement.scrollTop
+      if (top > 5) {
+        this.showBack = false
+      } else {
+        this.showBack = true
+      }
       if (top > 40) {
         let opacity = top / 120
         opacity = opacity > 1 ? 1 : opacity
@@ -69,6 +76,7 @@ export default {
       color #ffffff
       font-weight bold
   .header-fixed
+    z-index 2
     position fixed
     top 0
     left 0
