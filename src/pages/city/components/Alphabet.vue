@@ -8,7 +8,7 @@
     @touchstart.prevent="handleTouchStart"
     @touchmove="handleTouchMove"
     @touchend="handleTouchEnd"
-    @click="handleLetterClick"
+    @touchstart="handleLetterClick"
   >
     {{item}}</li>
   </ul>
@@ -75,7 +75,7 @@ export default {
   top 1.58rem
   right 0
   bottom 0
-  width 0.4rem
+  width 0.6rem
   .item
     text-align center
     line-height 0.44rem

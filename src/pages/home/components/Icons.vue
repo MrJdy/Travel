@@ -8,9 +8,9 @@
           :key="item.id"
         >
           <div class="icon-img">
-            <img class="icon-img-content" :src="item.imgURL">
+            <img class="icon-img-content" :src="item.imgUrl">
           </div>
-          <p class="icon-desc" v-text="item.title"></p>
+          <p class="icon-desc" v-text="item.desc"></p>
         </div>
       </swiper-slide>
     </swiper>
@@ -70,7 +70,8 @@ export default {
       .icon-img-content
         display block
         margin 0 auto
-        height 100%
+        width 1.1rem
+        height 1.1rem
     .icon-desc
       position absolute
       left 0

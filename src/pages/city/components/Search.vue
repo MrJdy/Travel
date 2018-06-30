@@ -73,7 +73,10 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.search)
+    const option = {
+      click: true
+    }
+    this.scroll = new Bscroll(this.$refs.wrapper, option)
   }
 }
 </script>

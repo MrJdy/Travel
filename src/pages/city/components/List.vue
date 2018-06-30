@@ -12,7 +12,7 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of hotCities" :key="item.id" @click="handleCityClick(item.name)">
+          <div class="button-wrapper needsclick" v-for="item of hotCities" :key="item.id" @click="handleCityClick(item.name)">
             <div class="button">{{item.name}}</div>
           </div>
         </div>
@@ -21,7 +21,7 @@
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div
-            class="item border-bottom"
+            class="item border-bottom needsclick"
             v-for="innerItem of item"
             :key="innerItem.id"
             @click="handleCityClick(innerItem.name)"
@@ -62,7 +62,10 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    const option = {
+      click: true
+    }
+    this.scroll = new Bscroll(this.$refs.wrapper, option)
   }
 }
 </script>

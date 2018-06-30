@@ -30,8 +30,8 @@ export default {
     }
   },
   methods: {
-    handleScroll () {
-      const top = document.documentElement.scrollTop
+    handleTouchMove () {
+      const top = document.body.scrollTop || document.documentElement.scrollTop
       if (top > 5) {
         this.showBack = false
       } else {
@@ -48,11 +48,11 @@ export default {
     }
   },
   activated () {
-    window.addEventListener('touchmove', this.handleScroll)
+    window.addEventListener('touchmove', this.handleTouchMove)
   },
   // 解绑全局事件
   deactivated () {
-    window.removeEventListener('touchmove', this.handleScroll)
+    window.removeEventListener('touchmove', this.handleTouchMove)
   }
 }
 </script>
