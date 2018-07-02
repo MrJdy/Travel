@@ -1,32 +1,35 @@
 <template>
-  <div class="list" ref="wrapper">
-    <div>
-      <div class="area">
-        <div class="title border-topbottom">您的位置</div>
-        <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">{{this.city}}</div>
+  <div>
+    <div class="letter" v-show="removeLetter">{{letter}}</div>
+    <div class="list" ref="wrapper">
+      <div>
+        <div class="area">
+          <div class="title border-topbottom">您的位置</div>
+          <div class="button-list">
+            <div class="button-wrapper">
+              <div class="button">{{this.city}}</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">热门城市</div>
-        <div class="button-list">
-          <div class="button-wrapper needsclick" v-for="item of hotCities" :key="item.id" @click="handleCityClick(item.name)">
-            <div class="button">{{item.name}}</div>
+        <div class="area">
+          <div class="title border-topbottom">热门城市</div>
+          <div class="button-list">
+            <div class="button-wrapper needsclick" v-for="item of hotCities" :key="item.id" @click="handleCityClick(item.name)">
+              <div class="button">{{item.name}}</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
-        <div class="title border-topbottom">{{key}}</div>
-        <div class="item-list">
-          <div
-            class="item border-bottom needsclick"
-            v-for="innerItem of item"
-            :key="innerItem.id"
-            @click="handleCityClick(innerItem.name)"
-          >
-            {{innerItem.name}}
+        <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
+          <div class="title border-topbottom">{{key}}</div>
+          <div class="item-list">
+            <div
+              class="item border-bottom needsclick"
+              v-for="innerItem of item"
+              :key="innerItem.id"
+              @click="handleCityClick(innerItem.name)"
+            >
+              {{innerItem.name}}
+            </div>
           </div>
         </div>
       </div>
@@ -41,7 +44,8 @@ export default {
   props: {
     hotCities: Array,
     cities: Object,
-    letter: String
+    letter: String,
+    removeLetter: Boolean
   },
   computed: {
     ...mapState(['city'])
@@ -71,6 +75,19 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
+.letter
+  z-index 100
+  position fixed
+  width 1.5rem
+  line-height 1.5rem
+  left 50%
+  top 50%
+  border-radius .1rem
+  transform translate(-50%, -44%)
+  color $bgColor
+  font-size .8rem
+  background rgba(0, 0, 0, .1)
+  text-align center
 .border-topbottom
   &:before
     border-color #cccccc
@@ -86,6 +103,18 @@ export default {
   left 0
   right 0
   bottom 0
+  .letter
+    z-index 100
+    position fixed
+    width 1rem
+    line-height 1rem
+    left 45%
+    top 50%
+    transform translate(-50%, -50%)
+    color $bgColor
+    font-size .5rem
+    background rgba(0, 0, 0, .1)
+    text-align center
   .title
     line-height 0.54rem
     background #eeeeee

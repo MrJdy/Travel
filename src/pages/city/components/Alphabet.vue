@@ -8,7 +8,7 @@
     @touchstart.prevent="handleTouchStart"
     @touchmove="handleTouchMove"
     @touchend="handleTouchEnd"
-    @touchstart="handleLetterClick"
+    @touchstart="handleClick"
   >
     {{item}}</li>
   </ul>
@@ -39,7 +39,7 @@ export default {
     this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
-    handleLetterClick (e) {
+    handleClick (e) {
       this.$emit('change', e.target.innerText)
     },
     handleTouchStart () {
@@ -61,6 +61,7 @@ export default {
     },
     handleTouchEnd () {
       this.touchStatus = false
+      this.$emit('end')
     }
   }
 }
