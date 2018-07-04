@@ -16,6 +16,7 @@ export default {
   },
   data () {
     return {
+      // 自定义轮播属性
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true,

@@ -20,6 +20,7 @@ export default new Router({
     name: 'Detail',
     component: Detail
   }],
+  // 设置每次调到下一页时滚动条回到顶部，避免多页面间互相干扰
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   }

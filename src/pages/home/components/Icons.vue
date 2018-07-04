@@ -13,6 +13,7 @@
           <p class="icon-desc" v-text="item.desc"></p>
         </div>
       </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -26,6 +27,9 @@ export default {
   data () {
     return {
       swiperOption: {
+        // 显示分页符号
+        pagination: '.swiper-pagination',
+        // 禁止自动轮播
         autoplay: false
       }
     }
@@ -51,7 +55,7 @@ export default {
 @import '~styles/mixins.styl'
 .icons >>> .swiper-container
   height 0
-  padding-bottom 50%
+  padding-bottom 55%
   .icon
     position relative
     overflow hidden
@@ -82,4 +86,6 @@ export default {
       color $darkTextColor
       text-align center
       ellipsis()
+.icons >>> .swiper-pagination-bullet-active
+  background $bgColor
 </style>

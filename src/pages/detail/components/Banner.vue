@@ -21,6 +21,7 @@
   </div>
 </template>
 <script>
+// 引入公共画廊组件
 import CommonGallery from 'common/gallery/Gallery'
 import FadeAnimation from 'common/fadeAnimation/FadeAnimation'
 export default {
