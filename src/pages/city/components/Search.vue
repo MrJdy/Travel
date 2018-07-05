@@ -63,7 +63,7 @@ export default {
         const result = []
         for (let i in this.cities) {
           this.cities[i].forEach((value) => {
-            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
+            if (value.spell.indexOf(this.keyword) === 0 || value.name.indexOf(this.keyword) > -1) {
               result.push(value)
             }
           })
